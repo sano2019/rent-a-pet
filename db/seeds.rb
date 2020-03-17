@@ -6,13 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-# pets_attributes = [
-#   {
-#     pet_category: 'dog',
-#   },
-#   {
-#     pet_category: 'cat',
-#   }
-# ]
-# Pet.create!(pets_attributes)
+puts "destroy DB"
+User.destroy_all
+Pet.destroy_all
+puts "Creating users"
+User.create!(email: "woland@sisi.com", password: "123456")
+puts "Creating pets"
+Pet.create!(name: "Sisi", user: User.first)
+puts "Done!!!!!"
