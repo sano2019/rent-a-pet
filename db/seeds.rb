@@ -12,5 +12,5 @@ Pet.destroy_all
 puts "Creating users"
 User.create!(email: "woland@sisi.com", password: "123456")
 puts "Creating pets"
-Pet.create!(name: "Sisi", user: User.first)
+Pet.create!(name: "Sisi", user: User.first, pet_category: "cat", age: 4, description: "playful", price_per_day: 20, )
 puts "Done!!!!!"
