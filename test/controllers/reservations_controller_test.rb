@@ -5,5 +5,4 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     get reservations_create_url
     assert_response :success
   end
-
 end
