@@ -1,0 +1,12 @@
+<h2>Browse pets!</h2>
+
+<ul class="list-group">
+<% @pets.each do |pet| %>
+  <li class="list-group-item">Name: <%= pet.name %></li>
+  <li class="list-group-item">Type: <%= pet.pet_category %></li>
+  <li class="list-group-item">Age: <%= pet.age %></li>
+  <li class="list-group-item">Description: <%= pet.description %></li>
+  <li class="list-group-item">Price: <%= pet.price_per_day %></li>
+  <li class="list-group-item">Email: <%= pet.user.email %></li>
+  <% end %>
+</ul>
