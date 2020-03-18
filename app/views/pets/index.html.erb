@@ -1,0 +1,9 @@
+<h1>Pets index</h1>
+
+<% @pets.each do |pet| %>
+<%= pet.user.email %> | <%= link_to pet.name, pet %>
+<% end %>
+<br>
+
+<%= link_to 'Home', root_path%>
+
