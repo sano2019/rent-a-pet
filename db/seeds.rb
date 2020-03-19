@@ -14,4 +14,9 @@ User.create!(email: "woland@sisi.com", password: "123456")
 puts "Creating pets"
 Pet.create!(name: "Sisi", user: User.first, pet_category: "cat", age: 4, description: "playful", price_per_day: 20, )
 Pet.create!(name: "Rex", user: User.first, pet_category: "dog", age: 1, description: "young and playful", price_per_day: 100, )
+puts "Creating reservations"
+Reservation.create!(start_date: DateTime.parse("10/03/2020"), end_date: DateTime.parse("20/03/2020"),
+ user_id: User.first.id,
+ pet_id: Pet.first.id,
+ total_price: 20000)
 puts "Done!!!!!"
