@@ -10,6 +10,8 @@
             <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path('cat-picture.jpeg')%>');"></div>
             <div class="card-text btn btn-warning"><%= link_to "Check dates", pet  %></div>
         </div>
+        <% if pet.user == current_user %>
+    <%= link_to '<i class="fas fa-trash"></i>'.html_safe, pet, method: :delete, data: { confirm: 'Are you sure?', class: "delete-button" }%>
         <% end %>
     </div>
 </div>
