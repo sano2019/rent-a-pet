@@ -1,8 +1,9 @@
 <% @pets = Pet.all %>
 <% @pets.each do |pet| %>
 <div class="card-body">
-  <h4 class="card-title"><%= pet.name %></h4>
-<div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path('cat-picture.jpeg')%>');"></div>
+  <h4 class="card-title"><%= pet.name %> the <%= pet.pet_category %></h4>
+<div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pet.image.key%>');"></div>
 <div class="card-text btn btn-warning"><%= link_to "Check dates", pet %></div>
 </div>
+
 <% end %>
