@@ -2,7 +2,7 @@
 
 <ul class="list-group">
 <% @pets.each do |pet| %>
-  <li class="list-group-item"><%= link_to pet.name, pet %> : <%= pet.pet_category  %> </li>
+  <li class="list-group-item"><%= link_to pet.name, pet %> : <%= pet.pet_category %> | <%= pet.user.email %> </li>
 
   <% end %>
 </ul>

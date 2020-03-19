@@ -10,6 +10,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    # raise
   end
 
   def create
@@ -22,9 +23,15 @@ class PetsController < ApplicationController
       end
   end
 
-  # def my_pets
-  #   @pets = current_user.pets
-  # end
+  def my_pets
+    @pets = current_user.pets
+  end
+
+  def destroy
+    @pet = Pet.find(params[:id])
+    @pet.destroy
+    redirect_to @pet
+  end
 
   private
 
