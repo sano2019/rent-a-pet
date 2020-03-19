@@ -4,6 +4,8 @@
   <%= f.input :age %>
   <%= f.input :price_per_day %>
   <%= f.input :description %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
   <%= f.input :image, as: :file %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.button :submit %>
