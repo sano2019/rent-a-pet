@@ -15,11 +15,14 @@ class ReservationsController < ApplicationController
     period = period.to_i
     @reservation.total_price = (@pet.price_per_day) * period
     if @reservation.save
-      redirect_to pets_path(@pet)
+      redirect_to reservation_path(@reservation)
     else
       render :new
     end
+  end
 
+  def show
+    @reservation = Reservation.find(params[:id])
   end
 
   private
