@@ -1,0 +1,7 @@
+<div class="container">
+<h2>Congratulations!</h2>
+<p>From the <%= @reservation.start_date %> to the <%= @reservation.end_date %>, you will foster <%= @reservation.pet.name %>!</p>
+<p>This <%= @reservation.pet.pet_category %> is <%= @reservation.pet.age %> years old.</p>
+<p>You can now contact the owner at this address: <%= @reservation.user.email %></p>
+<p>For this fostering, you will earn <%= @reservation.full_price %>€</p>
+</div>
