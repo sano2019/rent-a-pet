@@ -1,9 +1,13 @@
 .footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
   background-color: #7fa998;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 80px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   margin-top: 3%;
