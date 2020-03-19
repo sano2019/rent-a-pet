@@ -4,4 +4,5 @@ class Pet < ApplicationRecord
   has_many :users, through: :reservations
   validates :name, presence: true
   has_one_attached :image
+  validates :image, presence: true
 end
