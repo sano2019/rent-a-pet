@@ -12,6 +12,7 @@ User.destroy_all
 Pet.destroy_all
 puts "Creating users"
 User.create!(email: "woland@sisi.com", password: "123456")
+User.create!(email: "hehe@sisi.com", password: "123456")
 puts "Creating pets"
 
 sisi = Pet.create!(name: "Sisi", user: User.first, pet_category: "Cat", age: 4, description: "Sisi is very playful and loves to cuddle. She doesn't bite", price_per_day: 120, )
@@ -61,6 +62,12 @@ yegor.image.attach(io: file, filename: 'yegor.png', content_type: 'image/png')
 bubba = Pet.create!(name: "Bubba", user: User.first, pet_category: "Fish", age: 69, description: "Bubba is a real piece of work. After a long stretch in the gangland territory, he is now (semi) retired from his life of crime. He is still hard and will win any stare down you put him in. Foster him at your own risk, he is very obscene, but a heart of gold.", price_per_day: 200, )
 file = URI.open("https://res.cloudinary.com/sano2019/image/upload/v1584563660/M6p8rz1yZQpfZh4kSAPw1y5w.jpg")
 bubba.image.attach(io: file, filename: 'bubba.png', content_type: 'image/png')
+
+puts "Creating reservations"
+Reservation.create!(start_date: DateTime.parse("10/03/2020"), end_date: DateTime.parse("20/03/2020"),
+ user_id: User.first.id,
+ pet_id: Pet.last.id,
+ total_price: 20000)
 
 puts "Done!!!!!"
 
