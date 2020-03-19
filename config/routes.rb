@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'reservations/create'
   devise_for :users
   root to: 'pages#home'
-
+  get 'pets/my_pets'
   resources :pets do
     resources :reservations, only: [:new, :create]
   end
