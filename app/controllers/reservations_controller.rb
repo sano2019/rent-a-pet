@@ -9,9 +9,17 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reserv_params)
     @reservation.user = current_user
     @reservation.pet = @pet
-    # still to implement: the price
-    # period = @reservation.end_date - @reservation.start_date
-    # @reservation.total_price = @pet.price_per_day * period
+    # Implementing the price
+    period = @reservation.end_date - @reservation.start_date
+    # turn it into an integer because it was a rational
+    period = period.to_i
+    @reservation.total_price = (@pet.price_per_day) * period
+    if @reservation.save
+      redirect_to pets_path(@pet)
+    else
+      render :new
+    end
+
   end
 
   private
