@@ -10,15 +10,27 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    # raise
   end
 
   def create
       @pet = Pet.new(pet_params)
+      @pet.user = current_user
       if @pet.save
         redirect_to @pet, notice: 'successfully created.'
       else
         render :new
       end
+  end
+
+  def my_pets
+    @pets = current_user.pets
+  end
+
+  def destroy
+    @pet = Pet.find(params[:id])
+    @pet.destroy
+    redirect_to @pet
   end
 
   private

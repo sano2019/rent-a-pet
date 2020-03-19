@@ -1,0 +1,5 @@
+<h1>My pets</h1>
+<% @pets.each do |pet| %>
+  <li class="list-group-item"><%= link_to pet.name, pet %> : <%= pet.pet_category  %> </li>
+
+  <% end %>
