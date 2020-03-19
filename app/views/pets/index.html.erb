@@ -2,7 +2,12 @@
 
 <ul class="list-group">
 <% @pets.each do |pet| %>
-  <li class="list-group-item"><%= link_to pet.name, pet %> : <%= pet.pet_category %> | <%= pet.user.email %> </li>
+  <li class="list-group-item"><%= link_to pet.name, pet %> : <%= pet.pet_category %> | <%= pet.user.email %>
+      <% if pet.user == current_user %>
+    <%= link_to '<i class="fas fa-trash"></i>'.html_safe, @pet_id, method: :delete, data: { confirm: 'Are you sure?', class: "delete-button" }%>
+<% end %>
+
+  </li>
 
   <% end %>
 </ul>
