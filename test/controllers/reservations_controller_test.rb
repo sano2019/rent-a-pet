@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class ReservationsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should get create" do
+    get reservations_create_url
+    assert_response :success
+  end
 end

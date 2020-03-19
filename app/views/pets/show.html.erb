@@ -11,6 +11,9 @@
   <li class="list-group-item">Email: <%= @pet.user.email %></li>
   <% end %>
 </ul>
+
+<%= link_to "Offer to foster", new_pet_reservation_path(@pet) %>
 <% if @pet.user == current_user %>
 <%= link_to '<i class="fas fa-trash"></i>'.html_safe, @pet_id, method: :delete, data: { confirm: 'Are you sure?', class: "delete-button" }%>
 <% end %>
+
