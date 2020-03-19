@@ -1,8 +1,15 @@
+ <% if user_signed_in? %>
+    <div class="cards">
+        <%= render "components/pet_card" %>
+    </div>
+</div>
+<% else %>
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('birds.png')%>);">
     <div class="container">
         <h1>Rent A Pet</h1>
         <p>We deliver the best experience in fostering pets</p>
-        <a class="btn btn-warning" href="#">Apply now</a>
+        <a> <%= link_to "Apply now", new_user_registration_path, class:"btn btn-warning" %></a>
     </div>
 </div>
 <div class="container">
@@ -16,11 +23,6 @@
         <%= render "components/pet_card" %>
         <%= render "components/pet_card" %>
         <%= render "components/pet_card" %>
-        <%= render "components/pet_card" %>
-        <%= render "components/pet_card" %>
-        <%= render "components/pet_card" %>
-        <%= render "components/pet_card" %>
-        <%= render "components/pet_card" %>
-        <%= render "components/pet_card" %>
     </div>
 </div>
+<% end %>
