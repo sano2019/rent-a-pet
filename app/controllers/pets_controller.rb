@@ -21,7 +21,7 @@ class PetsController < ApplicationController
       period = period.to_i
       @pet.total_price = (@pet.price_per_day) * period
       if @pet.save
-        redirect_to @pet, notice: 'successfully created.'
+        redirect_to pets_my_pets_path, notice: 'successfully created.'
       else
         render :new
       end
@@ -34,7 +34,8 @@ class PetsController < ApplicationController
   def destroy
     @pet = Pet.find(params[:id])
     @pet.destroy
-    redirect_to @pet
+    # raise
+    redirect_to pets_my_pets_path
   end
 
   private
