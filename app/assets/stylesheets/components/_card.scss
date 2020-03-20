@@ -1,7 +1,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 24px;
 }
 
 // Smallest device
@@ -35,7 +35,7 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -47,6 +47,9 @@
   position: relative;
   display: flex;
   border-radius: 10px;
+  border-style: solid;
+  border-color: #7fa998;
+  border-width: 1px;
 }
 
 .card-title {
@@ -58,6 +61,11 @@
 .card-text {
   position: absolute;
   bottom: 20px;
+}
+
+.card-text a {
+text-decoration: none;
+color: white;
 }
 
 .card-image {
@@ -82,5 +90,6 @@
 }
 
 .main-container {
+  margin-top: 24px;
   display: flex;
 }
