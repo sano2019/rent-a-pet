@@ -1,4 +1,5 @@
  <% if user_signed_in? %>
+ <div class="main-container justify-content-center">
     <div class="cards">
         <%= render "components/pet_card" %>
     </div>
@@ -19,8 +20,10 @@
     <h2>Our values</h2>
     <p>We believe animals deserve the best care they can get. By fostering an animal, you are preventing them from being sent to a pound where they are in a small enclosure for the duration of their stay. Why not have a look at the following animals and rent yourself a companion for a few days while helping someone out?
     </p>
+  <div class="main-container justify-content-center">
     <div class="cards">
         <%= render "components/pet_card" %>
     </div>
+  </div>
 </div>
 <% end %>
