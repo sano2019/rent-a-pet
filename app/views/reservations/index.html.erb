@@ -1,0 +1,16 @@
+<h1>Bookings for my pets</h1>
+<% if @reservations.empty? %>
+  <h2>You don't have any offers yet.</h2>
+<% else %>
+  <% @reservations.each do |reservation| %>
+  <h2>You have a reservation from <%= reservation.user.email %> for <%= reservation.pet.name %></h2>
+    <% if reservation.reservation_status == "pending" %>
+      <%= link_to "Accept", accept_reservation_path(reservation), method: :post %>
+      <%= link_to "Decline", decline_reservation_path(reservation), method: :post %>
+    <% else  %>
+      <p>Status: <%= reservation.reservation_status %></p>
+    <% end %>
+  <% end %>
+<% end %>
+
+

@@ -1,0 +1,14 @@
+<h1>My offers to foster a pet</h1>
+<% if @reservations.empty? %>
+  <h2>You have not done any offers yet.</h2>
+<% else %>
+  <% @reservations.each do |reservation| %>
+  <h2>You made a reservation for <%= reservation.pet.name %></h2>
+  <p>Status: <%= reservation.reservation_status %></p>
+     <% if reservation.reservation_status == "accepted" %>
+     <%= link_to "More infos", reservation_path(reservation) %>
+     <% end %>
+  <% end %>
+<% end %>
+
+
