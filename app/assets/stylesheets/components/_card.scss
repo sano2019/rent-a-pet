@@ -1,7 +1,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 24px;
 }
 
 // Smallest device
@@ -35,7 +35,7 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -58,6 +58,12 @@
 .card-text {
   position: absolute;
   bottom: 20px;
+
+}
+
+.card-text a {
+text-decoration: none;
+color: white;
 }
 
 .card-image {
