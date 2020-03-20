@@ -22,10 +22,27 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
-  def my_offers
+  def index
     @reservations = Reservation.where(pet_id: current_user.pets)
   end
 
+  def my_offers
+    @reservations = Reservation.where(user: current_user)
+  end
+
+  def accept
+    @reservation = Reservation.find(params[:id])
+    @reservation.reservation_status = "accepted"
+    @reservation.save
+    redirect_to reservations_path
+  end
+
+   def decline
+    @reservation = Reservation.find(params[:id])
+    @reservation.reservation_status = "declined"
+    @reservation.save
+    redirect_to reservations_path
+  end
 
   private
 
