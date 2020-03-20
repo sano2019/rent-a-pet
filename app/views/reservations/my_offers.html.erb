@@ -1,3 +1,4 @@
+<div class="container">
 <h1>My offers to foster a pet</h1>
 <% if @reservations.empty? %>
   <h2>You have not done any offers yet.</h2>
@@ -6,9 +7,9 @@
   <h2>You made a reservation for <%= reservation.pet.name %></h2>
   <p>Status: <%= reservation.reservation_status %></p>
      <% if reservation.reservation_status == "accepted" %>
-     <%= link_to "More infos", reservation_path(reservation), class: "btn btn-pets" %>
+     <%= link_to "More info", reservation_path(reservation), class: "btn btn-pets" %>
      <% end %>
   <% end %>
 <% end %>
-
+</div>
 

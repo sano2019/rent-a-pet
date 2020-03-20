@@ -1,5 +1,5 @@
  <% if user_signed_in? %>
- <h2 class="text-center mt-3">Pets available for fostering:</h2>
+ <h2 class="text-center mt-3">Pets available for fostering</h2>
  <div class="main-container justify-content-center">
     <div class="cards">
         <%= render "components/pet_card" %>
@@ -10,8 +10,8 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('girl_dog.jpg')%>);">
     <div class="container">
         <h1>Rent A Pet</h1>
-        <p>We deliver the best experience in fostering pets</p>
-        <a> <%= link_to "Apply now", new_user_registration_path, class:"btn btn-warning" %></a>
+        <p>Awesome pets to foster - Awesome people</p>
+        <a> <%= link_to "Foster now", new_user_registration_path, class:"btn btn-warning" %></a>
     </div>
 </div>
 <div class="container">
