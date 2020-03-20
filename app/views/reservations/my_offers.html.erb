@@ -6,7 +6,7 @@
   <h2>You made a reservation for <%= reservation.pet.name %></h2>
   <p>Status: <%= reservation.reservation_status %></p>
      <% if reservation.reservation_status == "accepted" %>
-     <%= link_to "More infos", reservation_path(reservation) %>
+     <%= link_to "More infos", reservation_path(reservation), class: "btn btn-pets" %>
      <% end %>
   <% end %>
 <% end %>

@@ -1,7 +1,11 @@
 class PetsController < ApplicationController
   def index
-    @pets = Pet.all
-    # raise
+    if current_user.pets.any?
+      @pets = Pet.where.not(user: current_user)
+    else
+      @pets = Pet.all
+    end
+
   end
 
   def new

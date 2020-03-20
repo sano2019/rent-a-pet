@@ -8,7 +8,8 @@
         <li class="list-group-item">Type: <%= @pet.pet_category %></li>
         <li class="list-group-item">Age: <%= @pet.age %></li>
         <li class="list-group-item">Description: <%= @pet.description %></li>
-        <li class="list-group-item">Price: <%= @pet.price_per_day %></li>
+        <li class="list-group-item">Daily rate: <%= @pet.price_per_day %>SEK</li>
+        <li class="list-group-item">Available from <%= @pet.start_date.strftime "%A %e %B %Y" %> to <%= @pet.end_date.strftime "%A %e %B %Y" %></li>
         <% if false  %>
         <li class="list-group-item">Email: <%= @pet.user.email %></li>
         <% end %>
@@ -16,7 +17,7 @@
       <% if @pet.user == current_user %>
       <%= link_to '<i class="fas fa-trash"></i>'.html_safe, @pet_id, method: :delete, data: { confirm: 'Are you sure?', class: "delete-button" }%>
       <% else %>
-      <%= link_to "Offer to foster", new_pet_reservation_path(@pet) %>
+      <%= link_to "Offer to foster", new_pet_reservation_path(@pet), class: "btn btn-pets" %>
       <% end %>
     </li>
       </ul>
