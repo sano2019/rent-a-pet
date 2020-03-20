@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
     # Implementing the price
 
     if @reservation.save
-      redirect_to :root, notice: "Offer send to owner"
+      redirect_to :root, notice: "Offer sent to owner"
     else
       render :new
     end
