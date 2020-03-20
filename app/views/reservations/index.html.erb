@@ -1,0 +1,3 @@
+<h1>Bookings for my pets</h1>
+<%= @reservations[0].each do |reservation| %>
+<h2>You have a reservation from <%= reservation.user %> for <%= reservation.pet.name %></h2>

@@ -22,6 +22,11 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
+  def my_offers
+    @reservations = Reservation.where(pet_id: current_user.pets)
+  end
+
+
   private
 
   def reserv_params
