@@ -63,7 +63,7 @@ mikael = Pet.create!(name: "Mikael", user: User.last, pet_category: "Horse", age
   description: "Mikael loves going for long walks, preferably when it is sunny. After a long day in the forest, he usually dines with me in the living room and then curls up on the foot end of my bed for sleep.",
   price_per_day: 500, start_date: DateTime.parse("10/04/2020"), end_date: DateTime.parse("20/03/2020"), total_price: 500000)
 file = URI.open("https://res.cloudinary.com/sano2019/image/upload/v1584628821/mikael-kristenson-EXuKQaf3Ei8-unsplash_mevyqq.jpg")
-mikael.image.attach(io: file, filename: 'mikael.png', content_type: 'image/png')
+mikael.image.attach(io: file, filename: 'mikael.jpg', content_type: 'image/jpg')
 
 jamie = Pet.create!(name: "Jamie", user: User.last, pet_category: "Dog", age: 3,
   description: "Jamie is a young doggo, she loves reading and is really good at it. She once won the national spelling bee.",

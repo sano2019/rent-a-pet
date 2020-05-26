@@ -24,7 +24,7 @@
         <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link" %>
         <small><%= current_user.email %></small>
         <% else %>
-        <% avatar = "https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2890&q=80" %>
+        <% avatar = "https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80" %>
         <%= link_to 'Login', user_session_path, class: "nav-link" %>
         <% end %>
       </li>
